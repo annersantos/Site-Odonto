@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --color-gold-300: #EED69F;
+  --color-gold-400: #E0C17B;
+  --color-gold-500: #C5A059;
+  --color-gold-600: #A8833E;
+  --color-gold-700: #8C6A2C;
+  --color-offwhite: #FAF9F6;
+  --color-graphite-900: #141619;
+  --color-graphite-800: #1F2227;
+  --color-graphite-700: #2C3038;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-offwhite);
+  color: #2C3038;
+  overflow-x: hidden;
+}
+
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-heading {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Luxury Gold Gradients & Glows */
+.gold-gradient {
+  background: linear-gradient(135deg, #DDC082 0%, #C5A059 50%, #9E7B35 100%);
+}
+
+.gold-gradient-soft {
+  background: linear-gradient(135deg, #FFF9EB 0%, #F5E8C7 50%, #E8D3A2 100%);
+}
+
+.gold-gradient-dark {
+  background: linear-gradient(135deg, #24221D 0%, #17181C 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #E3C686 50%, #A8833E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, rgba(197, 160, 89, 0.6), rgba(227, 198, 134, 0.2), rgba(168, 131, 62, 0.6)) 1;
+}
+
+.gold-glow {
+  box-shadow: 0 10px 30px -10px rgba(197, 160, 89, 0.35);
+}
+
+.gold-glow-lg {
+  box-shadow: 0 20px 40px -15px rgba(197, 160, 89, 0.45);
+}
+
+.luxury-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #FFFFFF;
+}
+
+.luxury-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(20, 22, 25, 0.08), 0 0 0 1px rgba(197, 160, 89, 0.35);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(235, 231, 223, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(20, 22, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #DDC082;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Pulse badge */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Smooth Accordion */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.accordion-content.active {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.accordion-icon {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-icon.active {
+  transform: rotate(180deg);
+}
